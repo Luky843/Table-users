@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="icon2.png" sizes="16x16">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/material-colors.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/sorttable.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/tablescript.js"></script>
+    <title>Home</title>
+    
+</head>
+<body ondragstart="return false;" ondrop="return false;">      
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+             <div class="text-center">
+              <h1 class="white">Persons list</h1>
+            </div>
+            <form id="form">
+                <div class="form-group white">
+                    <div class="col-lg-3">
+                        <label>Name</label>
+                        <input type="text" tabindex="1" class="form-control" id="Name" placeholder="Enter name">
+                        <div id="er1"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Surname</label>
+                        <input type="text" tabindex="2" class="form-control" id="Surname" placeholder="Enter surname">
+                        <div id="er2"></div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Date of birth</label>
+                        <input type="text" class="form-control" tabindex="4" id="Age" placeholder="dd.mm.yyyy">
+                        <div id="AgeErr"></div>
+                    </div>
+                    <div class="form-check">
+                        <div class="col-lg-2" style="padding-top:15px;">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionsRadios" id="male" checked>
+                                Male
+                            </label><br />
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionsRadios">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-1" style="padding-top:22px;">
+                        <button type="button" onclick="AddRow()" class="btn btn-primary btnBox">Add</button>
+                    </div>
+                </div>
+            </form>
+             
+            <div class="col-lg-12"><br /></div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="Table" style="visibility:hidden;">
+                        <div class="form-check white">
+                            <div class="col-lg-3" style="padding-top:15px;">
+                                <label class="form-check-label">
+                                    <input onclick="showAllSex()" type="radio" class="form-check-input" name="optionsRadios" checked>
+                                    Show all genders
+                                </label>
+                            </div>
+                            <div class="col-lg-3" style="padding-top:15px;">
+                                <label class="form-check-label">
+                                    <input onclick="showManList()" type="radio" class="form-check-input" name="optionsRadios">
+                                    Show only male gender
+                                </label>
+                                </div>
+                            <div class="col-lg-3" style="padding-top:15px;">
+                                <label class="form-check-label">
+                                    <input onclick="showFemaleList()" type="radio" class="form-check-input" name="optionsRadios">
+                                    Show only female gender
+                                </label>
+                            </div>
+                        </div>
+                        <table id="MyTable" class="table white sortable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th class="sorttable_nosort">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
